@@ -298,7 +298,8 @@ const App: React.FC = () => {
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  const launchDate = new Date(Date.now() + 30 * 24 * 60 * 60 * 1000); // 30 days from now
+// This is a fixed date and time is in UTC
+const launchDate = new Date('2025-11-29T17:00:00Z');
 
   return (
     <>
