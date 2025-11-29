@@ -1,0 +1,16 @@
+# System files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Node modules (if used in future)
+node_modules/
+
+# Temporary build folders
+dist/
+build/
+
+# VS Code settings
+.vscode/

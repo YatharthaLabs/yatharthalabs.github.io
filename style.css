@@ -230,3 +230,5 @@ header.shrink .logo h1 {
 header.shrink nav ul li a {
   font-size: 1rem;
 }
+/* new change to test PR */
+body { border: 2px solid rgb(9, 9, 9); }
