@@ -1,0 +1,361 @@
+/* ---------- RX 100 FONT ---------- */
+@font-face {
+  font-family: 'RX 100';
+  src: url('./fonts/RX 100.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* ---------- Base ---------- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: #fff;
+}
+/* ---------- Header Clean Fixed Version ---------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  transition: all 0.35s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+/* Shrink on scroll */
+header.shrink {
+  padding: 6px 30px;
+  background: rgba(0,0,0,0.85);
+}
+/* ----- LOGO SECTION (FIXED PERFECTLY) ----- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px; 
+}
+.logo img {
+  height: 45px;
+  width: auto;
+}
+header.shrink .logo img {
+  height: 35px;
+}
+.logo h1 {
+  font-family: 'RX 100';
+  font-size: 30px;
+  font-weight: 700;
+  margin: 0;
+  color: #257191;
+  transition: 0.3s ease;
+}
+header.shrink .logo h1 {
+  font-size: 24px;
+}
+/* ----- NAVIGATION MENU ----- */
+nav ul {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+nav ul li a:hover {
+  color: #259cc7;
+}
+/* ----- MOBILE VIEW ----- */
+.menu-btn {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+}
+/* MOBILE BREAKPOINTS */
+@media (max-width: 900px) {
+  nav ul {
+    flex-direction: column;
+    gap: 18px;
+  }
+  nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 240px;
+    background: rgba(0,0,0,0.9);
+    padding: 20px;
+    display: none;
+    flex-direction: column;
+    text-align: right;
+    border-left: 1px solid rgba(255,255,255,0.1);
+  }
+  nav.active {
+    display: flex;
+  }
+  .menu-btn {
+    display: block;
+  }
+}
+
+/* ---------- Sections ---------- */
+.section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.background-video,
+video {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65));
+  z-index: -1;
+}
+/* Home Text */
+.center-content {
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+}
+.home-title {
+  font-family: 'RX 100';
+  font-size: clamp(48px, 8vw, 84px);
+}
+.home-sub {
+  font-size: 18px;
+}
+/* Left Section Content */
+.left-content {
+  max-width: 680px;
+  padding-left: 8vw;
+  padding-right: 40px;
+  z-index: 2;
+}
+.section-heading {
+  font-family: 'RX 100';
+  font-size: clamp(34px, 5.5vw, 56px);
+  margin-bottom: 14px;
+}
+/* ---------- Basic Text ---------- */
+.lead {
+  font-size: 17px;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.text-link { color: white; text-decoration: underline; }
+/* ---------- Footer ---------- */
+.footer {
+  padding: 28px;
+  text-align: center;
+  color: #999;
+}
+/* ---------- MUD Sections ---------- */
+.mud-about,
+.mud-demo,
+.mud-cta {
+  background: black;
+  padding: 120px 8vw;
+}
+.demo-container { text-align: center; }
+.demo-box {
+  width: 80%;
+  margin: 40px auto 0;
+  height: 350px;
+  border: 2px dashed #257191;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8;
+}
+/* ---------- Contact Section ---------- */
+.contact-section {
+  background: #000;
+  padding: 120px 0;
+  display: flex;
+  justify-content: center;
+}
+.contact-container {
+  width: 88%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+.contact-info { flex: 1; }
+.info-box p { color: #ddd; }
+.contact-form {
+  flex: 1;
+  background: rgba(255,255,255,0.05);
+  padding: 28px;
+  border-radius: 12px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 18px rgba(0,153,204,0.25);
+}
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: white;
+}
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  background: #257191;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+.contact-form button:hover { background: #00b4e6; }
+/* ---------- MOBILE RESPONSIVE ---------- */
+@media (max-width: 900px) {
+  header {
+    padding: 14px 20px;
+  }
+  .logo img { height: 45px; }
+  .logo h1 { font-size: 1.6rem; }
+  nav ul {
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 10px;
+    background: rgba(0,0,0,0.85);
+    width: 100%;
+    text-align: center;
+  }
+  .section { height: auto; padding: 80px 20px; }
+  .left-content {
+    padding: 0 20px;
+    max-width: 100%;
+  }
+  video { height: 60vh; }
+  .demo-box { width: 95%; height: 260px; }
+  .home-title {
+    font-size: clamp(34px, 10vw, 64px);
+  }
+  .section-heading {
+    font-size: clamp(24px, 8vw, 36px);
+  }
+  p { font-size: 16px; }
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+  .contact-section {
+    padding: 80px 0;
+  }
+}
+/* For very small phones */
+@media (max-width: 480px) {
+  nav ul li a { font-size: 1rem; }
+  .home-sub { font-size: 16px; }
+  .demo-box { height: 220px; }
+}
+a {
+  text-decoration: none !important;
+  border: none !important;
+  outline: none !important;
+}
+.logo a {
+  text-decoration: none !important;
+  border-bottom: none !important;
+}
+header, header * {
+  transition: all 0.3s ease;
+}
+ @media (max-width: 480px) {
+  nav ul li a { font-size: 1rem; }
+  .home-sub { font-size: 16px; }
+  .demo-box { height: 220px; }
+}
+/* ---------- MOBILE HERO PRO VERSION ---------- */
+@media (max-width: 600px) {
+  /* Full hero section adjust */
+  .section {
+    height: 80vh !important;
+    padding-top: 120px !important;
+    text-align: center;
+  }
+  /* Title */
+  .home-title {
+    font-size: 2.3rem !important;
+    line-height: 2.6rem !important;
+    margin-bottom: 8px;
+  }
+  /* Subtitle */
+  .home-sub {
+    font-size: 1rem !important;
+    width: 88%;
+    margin: 0 auto;
+    margin-top: 6px;
+    line-height: 1.4rem;
+  }
+  /* If any BUTTONS are used later */
+  .home-btn {
+    margin-top: 18px;
+    padding: 10px 22px;
+    font-size: 1rem;
+    border-radius: 8px;
+  }
+  /* Background video */
+  .background-video,
+  video {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+/* ---------- MOBILE TEXT IMPROVEMENTS (ONLY ON MOBILE) ---------- */
+@media (max-width: 600px) {
+  /* All text left aligned */
+  .left-content,
+  .center-content,
+  .section,
+  .section * {
+    text-align: left !important;
+  }
+  /* Reduce text size slightly */
+  .home-title {
+    font-size: 1.9rem !important;
+    line-height: 2.2rem !important;
+  }
+  .home-sub,
+  p,
+  .lead {
+    font-size: 0.95rem !important;
+  }
+  /* Reduce line gap */
+  .lead,
+  p {
+    line-height: 1.35rem !important;
+  }
+  /* Reduce word spacing */
+  .section,
+  .section * {
+    letter-spacing: 0.2px !important;
+    word-spacing: 0px !important;
+  }
+}
